@@ -1,0 +1,36 @@
+{%- if product_card_product.featured_image -%}{%- assign variable_featured_image = product_card_product.featured_image -%}{%- else -%}{%- assign variable_featured_image = full_product.featured_image -%}{%- endif -%}
+{%- if product_card_product.media -%}{%- assign variable_media = product_card_product.media -%}{%- else -%}{%- assign variable_media = full_product.media -%}{%- endif -%}
+{%- if full_product -%}
+  {%- assign media_cursor = 0 -%}
+  {%- if variable_featured_image == null -%}
+    {%- assign media_cursor = 1 -%}
+  {%- else -%}
+    {%- for media in variable_media -%}{%- if media == variable_featured_image.src %}{% assign media_cursor = forloop.index -%}{%- break -%}{%- endif -%}{%- endfor -%}
+  {%- endif -%}
+  {%- assign prev_cursor = media_cursor | minus: 2 -%}{%- assign second_media = variable_media[media_cursor] | default: variable_media[prev_cursor] -%}
+{%- else -%}{%- assign second_media = variable_media[1] -%}{%- endif -%}{%- if product_card_product.featured_media -%}{%- assign variable_featured_media = product_card_product.featured_media -%}{%- else -%}{%- assign variable_featured_media = full_product.featured_media -%}{%- endif -%}
+{%- if variable_featured_media -%}
+    {%- if variant_img != blank -%}
+        {% if settings.quick_shop_type == '2' %}
+            <img {% render 'lazyload-card',preview_img: variable_featured_media, class: true  %} />
+        {% else %}
+            <img {% render 'lazyload-card',preview_img: variant_img, class: true  %} />
+        {% endif %}
+    {%- else -%}
+        <img {% render 'lazyload-card',preview_img: variable_featured_media, class: true  %} />
+    {%- endif -%}
+    {%- if second_media != nil and settings.show_image_swap -%}
+        {% if has_video != blank and settings.enable_hover_video_product_items %}
+        {{ has_video[0] | video_tag: muted: true, loop: true, image_size: '50x' }}
+        {% else %}
+        <img {% render 'lazyload-card',preview_img: second_media, class: true  %} />
+        {% endif %}
+    {%- endif -%}
+    {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+    {%- if loading and settings.show_image_loading -%}
+        <div class="media-loading" data-title="{{ settings.image_loading_text }}">{{ settings.image_loading_text }}</div>
+    {%- endif -%}
+{%- else -%}
+    {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+    {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+{%- endif -%}

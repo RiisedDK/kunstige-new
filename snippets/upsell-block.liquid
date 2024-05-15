@@ -1,0 +1,304 @@
+<div id="shopify-block-4159492616563116687" class="shopify-block shopify-app-block"><!-- BEGIN app snippet: cross-sell -->
+
+
+
+
+
+
+
+
+
+<style>
+  .xs-clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+</style>
+<div class="xs-clearfix"></div>
+<div id="cross-sell"></div>
+<div id="upsell"></div>
+<div id="xs_bundle"></div>
+<div class="xs-clearfix"></div>
+
+<script type="text/javascript" charset="utf-8">
+
+  var xsellSettings = xsellSettings || {};
+  
+  var cartitems = 'advents-pakke-med-kertelys-4-farver';
+  xsellSettings.cartitems = cartitems.split(',');
+  
+
+  xsellSettings.shopMetafields = eval({"popupsettings":"%7B%22active%22:true,%22title%22:%22People%20Also%20Bought%22,%22more_info%22:%22More%20Info%22,%22skip%22:%22No,%20thanks.%22,%22shown_products%22:%223%22,%22display_compare_at_price%22:false,%22hide_mobile%22:false,%22product_description_on_bottom%22:true,%22hide_product_description%22:false,%22apply_max_shows%22:false,%22max_shows%22:0,%22trigger_click_listener%22:null,%22add_to_cart_text%22:%22Add%20to%20cart%22,%22added_to_cart_text%22:%22added%20to%20cart!%22,%22add_to_cart_btn_text_color%22:%22%22,%22add_to_cart_btn_bg_color%22:%22%22,%22continue_shopping_text%22:%22Continue%20shopping%22,%22continue_shopping_btn_text_color%22:%22%22,%22continue_shopping_btn_bg_color%22:%22%22,%22go_to_cart_text%22:%22Go%20to%20cart%22,%22go_to_cart_btn_text_color%22:%22%22,%22go_to_cart_btn_bg_color%22:%22%22,%22more_info_text%22:%22More%20info%22,%22sold_out_text%22:%22Sold%20out%22,%22options_text%22:%22Options%22,%22quantity_text%22:%22QTY%22,%22quickview_enabled%22:true,%22quickview_mobile_enabled%22:false,%22quickview_skipped_if_unavailable%22:true,%22quickview_theme%22:%22charlie%22,%22quickview_btn_text%22:%22View%22,%22quickview_btn_text_color%22:%22%22,%22quickview_btn_bg_color%22:%22%22,%22disable_close_after_add_to_cart%22:false,%22cart_refresh_callback_js%22:%22%22,%22windowshop_product_theme%22:%22%22,%22windowshop_gallery_theme%22:%22columns%22,%22bypass_more_info_to_product_page%22:false,%22delay_popup_till_cart%22:false,%22windowshop_quick_add_to_cart_enabled%22:true,%22quick_add_to_cart_enabled%22:true,%22quick_add_to_cart_btn_bg_color%22:%22%23000%22,%22quick_add_to_cart_btn_icon%22:%22plus%22,%22quick_add_to_cart_position%22:%22right_corner%22,%22quick_add_to_cart_hide_mobile%22:false,%22quick_add_to_cart_text%22:%22Add%20to%20Cart%22,%22submit_after_close%22:true,%22redirect_after_close%22:false,%22showdefault%22:%223%22%7D","settings":"[{\"productpagemaxitems\":\"5\", \"titleproductpage\":\"You may also like...\", \"titleproductpagedefault\":\"Our Bestsellers...\", \"titlecheckoutpage\":\"Before you checkout, have you considered...\", \"showdefault\":\"3\", \"checkoutpagemaxitems\":\"5\", \"showcheckout\":\"2\", \"cstr\":\"on\", \"cssmartcart\":\"off\", \"cssmart_homepage\":\"2\", \"cssmart_collection\":\"2\", \"cssmart_checkout\":\"2\", \"cssmart_drawer\":\"2\", \"upsell_smart_homepage\":\"2\", \"upsell_smart_collection\":\"2\", \"upsell_smart_checkout\":\"2\", \"upsell_smart_drawer\":\"2\", \"show_upsell_on_cart_page\":true, \"upsell_smartcart\":true, \"upsell_titlecheckoutpage\":\"You may like ?\", \"homepage_upsell_title\":\"You might also enjoy these items\", \"collection_upsell_title\":\"How about including these as well?\", \"checkout_upsell_title\":\"You won't want to pass up on these possibilities.\", \"drawer_upsell_title\":\"Explore More Options\", \"homepage_upsell_maxitems\":\"4\", \"collection_upsell_maxitems\":\"4\", \"checkout_upsell_maxitems\":\"4\", \"drawer_upsell_maxitems\":\"4\", \"homepage_cross_sell_title\":\"Our Bestsellers...\", \"collection_cross_sell_title\":\"Consider Adding...\", \"checkout_cross_sell_title\":\"Recommended Additions:\", \"drawer_cross_sell_title\":\"Recommended Additions\", \"drawer_handpicked_show_close_button_drawer\":true, \"drawer_handpicked_text_close_button\":\"No, Thanks.\", \"drawer_upsell_show_close_button\":true, \"drawer_upsell_text_close_button\":\"No, Thanks.\", \"drawer_handpicked_style\":\"inside\", \"drawer_upsell_style\":\"inside\", \"homepage_cross_sell_maxitems\":\"4\", \"collection_cross_sell_maxitems\":\"4\", \"checkout_cross_sell_maxitems\":\"4\", \"drawer_cross_sell_maxitems\":\"4\", \"theme\":\"xsell_slick\", \"skip_xsell_theme_font\":true, \"use_xsell_font_family\":false, \"font_family\":\"\", \"font_size\":\"\", \"font_color\":\"\", \"hideifincart\":true, \"displaypricevarieslabel\":true, \"carousel_auto_play\":true, \"carousel_page_dots\":false, \"carousel_enabled\":true, \"carousel_enabled_on\":\"responsive\", \"carousel_repeat\":false, \"image_size\":\"large\", \"image_height\":\"\", \"image_width\":\"220px\", \"bundle_discount\":\"on\", \"show_upsell_on_product_page\":true, \"show_bundle_on_product_page\":false, \"upsellshowdefault\":\"3\", \"upselltitleproductpage\":\"Would you rather like these?\", \"bundletitleproductpage\":\"Frequently Bought Together\", \"hoover_secondary_image\":false, \"show_post_purchase_page\":false, \"title_post_purchase_page\":\"Thank you for the purchase! Consider this to make your order even better.\", \"options_post_purchase_page\":\"6\", \"randomizecartpage\":true}]"});
+  xsellSettings.crosssellsettings = eval("[{\"productpagemaxitems\":\"5\", \"titleproductpage\":\"You may also like...\", \"titleproductpagedefault\":\"Our Bestsellers...\", \"titlecheckoutpage\":\"Before you checkout, have you considered...\", \"showdefault\":\"3\", \"checkoutpagemaxitems\":\"5\", \"showcheckout\":\"2\", \"cstr\":\"on\", \"cssmartcart\":\"off\", \"cssmart_homepage\":\"2\", \"cssmart_collection\":\"2\", \"cssmart_checkout\":\"2\", \"cssmart_drawer\":\"2\", \"upsell_smart_homepage\":\"2\", \"upsell_smart_collection\":\"2\", \"upsell_smart_checkout\":\"2\", \"upsell_smart_drawer\":\"2\", \"show_upsell_on_cart_page\":true, \"upsell_smartcart\":true, \"upsell_titlecheckoutpage\":\"You may like ?\", \"homepage_upsell_title\":\"You might also enjoy these items\", \"collection_upsell_title\":\"How about including these as well?\", \"checkout_upsell_title\":\"You won't want to pass up on these possibilities.\", \"drawer_upsell_title\":\"Explore More Options\", \"homepage_upsell_maxitems\":\"4\", \"collection_upsell_maxitems\":\"4\", \"checkout_upsell_maxitems\":\"4\", \"drawer_upsell_maxitems\":\"4\", \"homepage_cross_sell_title\":\"Our Bestsellers...\", \"collection_cross_sell_title\":\"Consider Adding...\", \"checkout_cross_sell_title\":\"Recommended Additions:\", \"drawer_cross_sell_title\":\"Recommended Additions\", \"drawer_handpicked_show_close_button_drawer\":true, \"drawer_handpicked_text_close_button\":\"No, Thanks.\", \"drawer_upsell_show_close_button\":true, \"drawer_upsell_text_close_button\":\"No, Thanks.\", \"drawer_handpicked_style\":\"inside\", \"drawer_upsell_style\":\"inside\", \"homepage_cross_sell_maxitems\":\"4\", \"collection_cross_sell_maxitems\":\"4\", \"checkout_cross_sell_maxitems\":\"4\", \"drawer_cross_sell_maxitems\":\"4\", \"theme\":\"xsell_slick\", \"skip_xsell_theme_font\":true, \"use_xsell_font_family\":false, \"font_family\":\"\", \"font_size\":\"\", \"font_color\":\"\", \"hideifincart\":true, \"displaypricevarieslabel\":true, \"carousel_auto_play\":true, \"carousel_page_dots\":false, \"carousel_enabled\":true, \"carousel_enabled_on\":\"responsive\", \"carousel_repeat\":false, \"image_size\":\"large\", \"image_height\":\"\", \"image_width\":\"220px\", \"bundle_discount\":\"on\", \"show_upsell_on_product_page\":true, \"show_bundle_on_product_page\":false, \"upsellshowdefault\":\"3\", \"upselltitleproductpage\":\"Would you rather like these?\", \"bundletitleproductpage\":\"Frequently Bought Together\", \"hoover_secondary_image\":false, \"show_post_purchase_page\":false, \"title_post_purchase_page\":\"Thank you for the purchase! Consider this to make your order even better.\", \"options_post_purchase_page\":\"6\", \"randomizecartpage\":true}]");
+  xsellSettings.upsellsettings = eval({"active":true,"title":"People Also Bought","more_info":"More Info","skip":"No, thanks.","shown_products":"3","display_compare_at_price":false,"hide_mobile":false,"product_description_on_bottom":true,"hide_product_description":false,"apply_max_shows":false,"max_shows":0,"trigger_click_listener":null,"add_to_cart_text":"Add to cart","added_to_cart_text":"added to cart!","add_to_cart_btn_text_color":"","add_to_cart_btn_bg_color":"","continue_shopping_text":"Continue shopping","continue_shopping_btn_text_color":"","continue_shopping_btn_bg_color":"","go_to_cart_text":"Go to cart","go_to_cart_btn_text_color":"","go_to_cart_btn_bg_color":"","more_info_text":"More info","sold_out_text":"Sold out","options_text":"Options","quantity_text":"QTY","quickview_enabled":true,"quickview_mobile_enabled":false,"quickview_skipped_if_unavailable":true,"quickview_theme":"charlie","quickview_btn_text":"View","quickview_btn_text_color":"","quickview_btn_bg_color":"","disable_close_after_add_to_cart":false,"cart_refresh_callback_js":"","windowshop_product_theme":"","windowshop_gallery_theme":"columns","bypass_more_info_to_product_page":false,"delay_popup_till_cart":false,"windowshop_quick_add_to_cart_enabled":true,"quick_add_to_cart_enabled":true,"quick_add_to_cart_btn_bg_color":"#000","quick_add_to_cart_btn_icon":"plus","quick_add_to_cart_position":"right_corner","quick_add_to_cart_hide_mobile":false,"quick_add_to_cart_text":"Add to Cart","submit_after_close":true,"redirect_after_close":false,"showdefault":"3"}) || {};
+  xsellSettings.money_format = "{{ amount_no_decimals }} kr";
+  xsellSettings.xsmainproducthandle = '';
+  xsellSettings.current_product_type = "";
+  xsellSettings.currentpagetype = 'cart';
+  xsellSettings.is_globalpage = true;
+
+  xsellSettings.xsrandomizeproductpage = xsellSettings.crosssellsettings[0]['randomizeproductpage'];
+  xsellSettings.xsrandomizecartpage = xsellSettings.crosssellsettings[0]['randomizecartpage'];
+  xsellSettings.xsmustbeavailable = xsellSettings.crosssellsettings[0]['mustbeavailable'];
+  xsellSettings.xshideifincart = xsellSettings.crosssellsettings[0]['hideifincart'];
+
+  xsellSettings.xsdisplaycompareatprice = xsellSettings.crosssellsettings[0]['displaycompareatprice'];
+  xsellSettings.xsdisplaysalebadge = xsellSettings.crosssellsettings[0]['displaysalebadge'];
+  xsellSettings.xsdisplaypricevarieslabel = xsellSettings.crosssellsettings[0]['displaypricevarieslabel'];
+  xsellSettings.xsdisplayvendor = xsellSettings.crosssellsettings[0]['displayvendor'];
+  xsellSettings.showcrosssellsonsignup = xsellSettings.crosssellsettings[0]['show_sign_up_cross_sells']
+  
+  xsellSettings.maxcrosssellsonsignup = xsellSettings.crosssellsettings[0]['sign_up_product_page_max_tems']
+
+  xsellSettings.sign_up_page_product_crosssells = eval(null);
+  
+  xsellSettings.sign_up_page_default_crosssells = eval(null);
+
+  
+  xsellSettings.sign_up_upsells = eval(null);
+
+  
+  
+  var crossselltitlecheckoutpage = xsellSettings.crosssellsettings[0]['titlecheckoutpage'];
+  var crossselltitleglobalpage = xsellSettings.crosssellsettings[0]['titleproductpagedefault'];
+  var crosssellshowcheckout = xsellSettings.crosssellsettings[0]['showcheckout'];
+  var upsellshowcheckout = xsellSettings.crosssellsettings[0]['show_upsell_on_cart_page'];
+  var upsell_titlecheckoutpage = xsellSettings.crosssellsettings[0]['upsell_titlecheckoutpage'];
+
+  xsellSettings.crosssellmaxitems = xsellSettings.crosssellsettings[0]['checkoutpagemaxitems'];
+  
+
+</script>
+
+
+
+<script type="text/javascript" charset="utf-8">
+var xsproductsData = '';
+xsellSettings.xstitle = "";
+xsellSettings.carousel_upsells = '';
+xsellSettings.carousel_bundle = '';
+  
+  if(typeof crosssellshowcheckout != 'undefined' && crosssellshowcheckout == '2'){
+    
+      
+      
+
+      
+    
+      
+      
+
+      
+        
+        xsellSettings.cross_sell_set = 'cart_default';
+      
+    
+    
+    xsproductsData = eval(null);
+
+    if(crossselltitlecheckoutpage.length){
+      xsellSettings.xstitle = crossselltitlecheckoutpage;
+    }
+  }
+  if(typeof upsellshowcheckout != 'undefined' && (upsellshowcheckout || upsellshowcheckout == "true")){
+    
+      
+      
+
+      
+        
+          
+          
+            
+            
+            
+      
+      
+    
+      
+      
+
+      
+    
+    xsellSettings.carousel_upsells = eval("[{\"order\":1, \"id\":\"8412333277530\", \"handle\":\"antik-lysestage-28cm\", \"title\":\"Antik lysestage 28cm\", \"imgsrc\":\"https:\/\/cdn.shopify.com\/s\/files\/1\/0727\/8172\/6042\/products\/160928_H-scaled.jpg?v=1710235868\"}, {\"order\":2, \"id\":\"8412333539674\", \"handle\":\"antik-lysestage-40-cm\", \"title\":\"Antik lysestage 40 cm\", \"imgsrc\":\"https:\/\/cdn.shopify.com\/s\/files\/1\/0727\/8172\/6042\/products\/160929_H-scaled.jpg?v=1710235246\"}, {\"order\":3, \"id\":\"8412336521562\", \"handle\":\"bakke-widdo\", \"title\":\"Bakke Widdo\", \"imgsrc\":\"https:\/\/cdn.shopify.com\/s\/files\/1\/0727\/8172\/6042\/products\/1009203-Freisteller-Hauptbild.jpg?v=1710236290\"}, {\"order\":4, \"id\":\"8412332589402\", \"handle\":\"bakkeopsats-saet\", \"title\":\"Bakkeopsats sæt\", \"imgsrc\":\"https:\/\/cdn.shopify.com\/s\/files\/1\/0727\/8172\/6042\/products\/161803_H-scaled.jpg?v=1710235575\"}, {\"order\":5, \"id\":\"8412333310298\", \"handle\":\"cleo-krystal-lysestage-rosa\", \"title\":\"Cleo Krystal lysestage \\\"Rosa\\\"\", \"imgsrc\":\"https:\/\/cdn.shopify.com\/s\/files\/1\/0727\/8172\/6042\/products\/160513_H-scaled.jpg?v=1710234360\"}, {\"order\":6, \"id\":\"8412336652634\", \"handle\":\"deco-paere\", \"title\":\"Deco pære\", \"imgsrc\":\"https:\/\/cdn.shopify.com\/s\/files\/1\/0727\/8172\/6042\/products\/2006056-Freisteller-Hauptbild.jpg?v=1710234649\"}, {\"order\":7, \"id\":\"8412338553178\", \"handle\":\"deco-snor-med-stjerner-1-m-hvid\", \"title\":\"Deco snor med stjerner 1 m (hvid)\", \"imgsrc\":\"https:\/\/cdn.shopify.com\/s\/files\/1\/0727\/8172\/6042\/products\/Flaske.jpg?v=1710233420\"}]");
+    xsellSettings.xsupselltitle = upsell_titlecheckoutpage || '';
+  }
+
+
+window.xsellData = window.xsellData || {};
+window.xsellData.data = xsproductsData;
+window.xsellData.settings = xsellSettings;
+</script>
+<!-- END app snippet -->
+<!-- BEGIN app snippet: cross-sell-drawer-cart -->
+
+
+
+
+
+<style>
+  body:has(.xsell__modal) .xsell_drawer_cart{
+    visibility: hidden;
+  }
+  @media(max-width: 700px){
+    .xsell_drawer_cart{
+      display: none;
+    }
+  }
+  .xsell_drawer_cart.xsell_inside{
+    height: 228px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .xsell_drawer_cart.xsell_inside .crosssell-title{
+    margin: 5px 0px;
+  }
+  .xsell_drawer_cart.xsell_inside .xs-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px 10px 0px 0px !important;
+    padding: 0px 0px 8px 0px !important;
+  }
+  .xsell_drawer_cart.xsell_inside .xs-image{
+    margin-top: 0px !important; 
+  }
+  .xsell_drawer_cart.xsell_inside .cross-sell:after {
+    content: 'flickity';
+    display: none; /* hide :after */
+  }
+  .xsell_drawer_cart.xsell_inside{
+    position: relative;
+  }
+  .xsell_drawer_cart.xsell_inside .close_section_xsell svg{
+    height: 17px;
+  }
+  .xsell_drawer_cart.xsell_inside .close_section_xsell {
+    cursor: pointer;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+  }
+</style> 
+<style>
+.xsell_drawer_cart.xsell_slide .cross-sell:after {
+  content: '';
+  display: none; /* hide :after */
+}
+.xsell_drawer_cart.xsell_slide{
+  background: white;
+  border: 1px solid #cfcfcf;
+  z-index: 2;
+}
+.xsell_drawer_cart.xsell_slide > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  height: 100%;
+}
+.xsell_drawer_cart.xsell_slide .crosssell-title {
+  margin: 25px 25px;
+  width: 200px;
+}
+.xsell_drawer_cart.xsell_slide #cross-sells {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.xsell_drawer_cart.xsell_slide{
+  position: relative;
+}
+
+.xsell_drawer_cart.xsell_slide .close_section_xsell svg{
+  height: 17px;
+}
+.xsell_drawer_cart.xsell_slide .close_section_xsell {
+  cursor: pointer;
+  position: absolute;
+  top: 11px;
+  right: 18px;
+}
+/*
+.xsell_drawer_cart.xsell_slide .close_section_xsell {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 3px 16px;
+  background: black;
+  color: white;
+  margin: 10px 0px 10px 0px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+*/
+#CartDrawer:has(#cross_sell_drawer_cart.xsell_slide){
+  overflow: visible;
+}
+#CartDrawer .xsell_drawer_cart.xsell_slide {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+#CartDrawer #cross_sell_drawer_cart.xsell_slide{
+  right: 300px;
+}
+#CartDrawer #upsell_drawer_cart.xsell_slide{
+  right: 598px;
+}
+</style>
+<div id="cross_sell_drawer_cart" class="xsell_drawer_cart"></div>
+<div id="upsell_drawer_cart" class="xsell_drawer_cart"></div>
+
+<script type="text/javascript" charset="utf-8">
+  var xsellSettings = xsellSettings || {};
+    
+  var crosssellshowcheckout = xsellSettings.crosssellsettings[0]['show_on_drawer'];
+  var crossselltitlecheckoutpage = xsellSettings.crosssellsettings[0]['drawer_cross_sell_title'];
+
+  var upsellshowcheckout = xsellSettings.crosssellsettings[0]['show_upsell_on_drawer'];
+  var upsell_titlecheckoutpage = xsellSettings.crosssellsettings[0]['drawer_upsell_title'];
+
+  if(typeof crosssellshowcheckout != 'undefined' && (crosssellshowcheckout || crosssellshowcheckout == '2')){
+    
+
+    
+      
+      
+
+      
+    
+
+    
+    xsellSettings.drawer_cross_sell = eval(null);
+    xsellSettings.drawer_cross_sell_title = crossselltitlecheckoutpage || '';
+  }
+  if(typeof upsellshowcheckout != 'undefined' && (upsellshowcheckout || upsellshowcheckout == "true")){
+    
+
+    
+      
+      
+
+      
+        
+
+    xsellSettings.drawer_upsell = eval(null);
+    xsellSettings.drawer_upsell_title = upsell_titlecheckoutpage || '';
+  }
+</script>
+
+
+<!-- END app snippet -->
+<script>
+  window.xellWindowShopURL = "https://cdn.shopify.com/extensions/e540a69a-d38d-4660-9dbb-9053b831680a/cross-sell-upsell-by-ssc-11/assets/windowshop.js";
+</script>
+<script src="https://cdn.shopify.com/extensions/e540a69a-d38d-4660-9dbb-9053b831680a/cross-sell-upsell-by-ssc-11/assets/custom.js" defer></script>
+<script src="https://cdn.shopify.com/extensions/e540a69a-d38d-4660-9dbb-9053b831680a/cross-sell-upsell-by-ssc-11/assets/cross-sell.js" defer></script>
+<script src="https://cdn.shopify.com/extensions/e540a69a-d38d-4660-9dbb-9053b831680a/cross-sell-upsell-by-ssc-11/assets/xsell.js" defer></script>
+<script src="https://cdn.shopify.com/extensions/e540a69a-d38d-4660-9dbb-9053b831680a/cross-sell-upsell-by-ssc-11/assets/custom_drawer.js" defer></script>
+
+</div>

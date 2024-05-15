@@ -1,0 +1,285 @@
+<!doctype html>
+{%- liquid
+  if settings.list_iso_rtl != blank
+    assign locale_iso_code = request.locale.iso_code
+    assign arr_list_rtl = settings.list_iso_rtl | remove: ' ' | split: ','
+    if arr_list_rtl contains locale_iso_code
+      assign enable_iso_rtl = true
+    else
+      assign enable_iso_rtl = false
+    endif
+  endif
+-%}
+
+<html
+  class="no-js"
+  lang="{{ request.locale.iso_code }}"
+  {% if settings.enable_layout_rtl and enable_iso_rtl %}
+    dir="rtl"
+  {% endif %}
+>
+  <head>
+	{% render 'pandectes-rules' %}
+    
+    {% render 'header_file' %}
+
+    <script type="lazyload_js">
+      AIDBASE_CHATBOT_ID = 'mcB18ILJxIOiWog9u2MEF';
+    </script>
+    <script type="lazyload_js" data-src="https://client.aidbase.ai/chat-widget.ab.js"></script>
+    <script type="lazyload_js" data-src="https://client.aidbase.ai/create-ticket-widget.ab.js"></script>
+    <script type="lazyload_js" data-src="https://client.aidbase.ai/ticket-widget.ab.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script type="lazyload_js">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NHHLZ77');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script type="lazyload_js" data-src="https://kit.fontawesome.com/21c28f70be.js"></script>
+    <script type="lazyload_js" data-src="{{ 'imginmenu.js' | asset_url }}"></script>
+
+    <meta name="google-site-verification" content="QzEzicOcap61FPbuicMdM9FibZ4MGU00Tzxy5M_QF_s">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="canonical" href="{{ canonical_url }}" canonical-shop-url="{{ shop.url }}/">
+
+    <link data-href="{{ 'custom.css' | asset_url }}" rel="stylesheet">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+    {% render 'meta-tags' %}
+
+    {%- if request.design_mode or template contains 'cart' or template contains 'checkout' -%}
+      {{ content_for_header }}
+      <script>
+        var trekkie=[];trekkie.integrations=!0;window.BOOMR={},window.BOOMR.version=true;
+      </script>
+    {%- else -%}
+      {% capture content_for_header2 %}{{ content_for_header }}{% endcapture %}
+      {{
+        content_for_header2
+        | replace: ' defer="defer" ', ' type="lazyload_js" '
+        | replace: ' src=', ' data-src='
+        | replace: 'DOMContentLoaded', 'appco-DOMContentLoaded'
+        | replace: "window.addEventListener('load', asyncLoad, false);",
+          "window.addEventListener('appco-DOMContentLoaded', asyncLoad, false);"
+        | replace: "addEventListener('load', prefetchAssets);",
+          "addEventListener('appco-DOMContentLoaded', prefetchAssets);"
+      }}
+      <script>
+        var trekkie=[];trekkie.integrations=!0;window.BOOMR={},window.BOOMR.version=true;
+      </script>
+    {%- endif -%}
+
+    {% render 'variable' %}
+    {% if template contains 'index' %}
+      {% render 'index-css' %}
+    {% elsif template contains 'collection' %}
+      {% render 'collection-css' %}
+      {% render 'collection-css2' %}
+    {% elsif template contains 'product' %}
+      {% render 'product-css' %}
+    {% else %}
+      {% render 'critical-css' %}
+    {% endif %}
+
+    {% render 'global-style' %}
+    {% render 'global-script' %}
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
+
+    {%- liquid
+      if settings.layout_body == 'full'
+        assign layout_body = 'body-full-width'
+      elsif settings.layout_body == 'boxed'
+        assign layout_body = 'body-boxed'
+      elsif settings.layout_body == 'custom_width'
+        assign layout_body = 'body-custom-width'
+      endif
+
+      if settings.style_dots == '02'
+        assign style_dots = 'style-dots-2'
+      endif
+
+      if settings.style_arrows == '02'
+        assign style_arrows = 'style-arrows-2'
+      endif
+
+      if settings.product_card_layout == '02'
+        assign product_card_layout = 'product-card-layout-02'
+      elsif settings.product_card_layout == '03'
+        assign product_card_layout = 'product-card-layout-03'
+      elsif settings.product_card_layout == '04'
+        assign product_card_layout = 'product-card-layout-04'
+      elsif settings.product_card_layout == '05'
+        assign product_card_layout = 'product-card-layout-05'
+      elsif settings.product_card_layout == '06'
+        assign product_card_layout = 'product-card-layout-06'
+      elsif settings.product_card_layout == '07'
+        assign product_card_layout = 'product-card-layout-07'
+      else
+        assign product_card_layout = 'product-card-layout-01'
+      endif
+
+      if settings.quick_shop_type == '2'
+        assign quick_shop_type = 'quick_shop_option_2'
+      elsif settings.quick_shop_type == '3'
+        assign quick_shop_type = 'quick_shop_option_3'
+      endif
+
+      unless request.design_mode
+        if settings.banner_animation == 'effect_1'
+          assign banner_animation = 'banner-animation-1'
+        endif
+      endunless
+
+      if settings.style_text_size_varriant == '02'
+        assign style_text_size_varriant = 'size_varriant_style_2'
+      endif
+    -%}
+
+    <!-- TrustBox script -->
+    <script type="lazyload_js" data-src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
+    <!-- End TrustBox script -->
+
+    {% render 'customer-events' %}
+
+    {{ shop.metafields.loox.global_html_head }}
+    {% render 'app-block' %}
+    {% render 'custom-css' %}
+    <!-- Start of Clerk.io E-commerce Personalisation tool - www.clerk.io -->
+    <script type="lazyload_js">
+      (function(w,d){
+        var e=d.createElement('script');e.type='text/javascript';e.async=true;
+        e.src='https://cdn.clerk.io/clerk.js';
+        var s=d.getElementsByTagName('script')[0];s.parentNode.insertBefore(e,s);
+        w.__clerk_q=w.__clerk_q||[];w.Clerk=w.Clerk||function(){w.__clerk_q.push(arguments)};
+      })(window,document);
+
+      Clerk('config', {
+        key: '91Q2xsk4kO7DPL7gdZ5SCctIXfuv3HCR',
+        formatters: {
+          currency_converter: function(price) {
+            var converted_price = (price*Shopify.currency.rate);
+            return (converted_price).toString();
+          }
+        },
+        globals: {
+          currency_iso: "{{ cart.currency.iso_code }}",
+          currency_symbol: "{{ cart.currency.symbol }}"
+        }
+      });
+    </script>
+    <!-- End of Clerk.io E-commerce Personalisation tool - www.clerk.io -->
+  </head>
+
+  <body class="template-{{ request.page_type }} {{layout_body}} {{style_dots}} {{style_text_size_varriant}} {{style_arrows}} {{product_card_layout}} {{ banner_animation }}{% if settings.enable_button_disable_arrows %} enable_button_disable_arrows{% endif %}{% if settings.display_text_color_title %} enable_text_color_title{% endif %}{% if settings.style_text_color_varriant == '02' %} style_2_text_color_varriant{% endif %}{% if settings.hide_compare_homepage %} hide_compare_homepage{% endif %} {{ quick_shop_type }}{% if settings.show_image_loading %} show_image_loading{% endif %}{% if settings.show_effect_close %} show_effect_close{% endif %}{% if settings.enable_layout_rtl and enable_iso_rtl %} layout_rtl{% endif %}{% if request.design_mode %} shopify-design-mode{% endif %}">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NHHLZ77"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="body-content-wrapper">
+      <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+        {{- 'accessibility.skip_to_text' | t -}}
+      </a>
+
+      {% sections 'header-group' %}
+      {% render 'wrapper-header' %}
+
+      {% if settings.layout_body == 'boxed' %}
+        <div class="wrapper-hasbanner-adv">
+      {% endif %}
+      {% render 'halo-banner-adv-left' %}
+      {% render 'halo-banner-adv-right' %}
+      <main id="MainContent" class="wrapper-body content-for-layout focus-none" role="main" tabindex="-1">
+        {% capture ICART_FULL_PAGE_LAYOUT %}{{ content_for_layout }}{% endcapture -%}
+        {%- include 'icart-variables', ICART_FULL_PAGE_LAYOUT: ICART_FULL_PAGE_LAYOUT %}
+      </main>
+      {% if settings.layout_body == 'boxed' %}
+        </div>
+      {% endif %}
+
+      <div class="wrapper-footer">{% sections 'footer-group' %}</div>
+
+      {% section 'halo-toolbar-mobile' %}
+
+      <ul hidden>
+        <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+      </ul>
+
+      {% render 'global-script-2' %}
+    </div>
+    {% render 'halo-popup' %}
+
+    {%- if settings.enable_view_documentation -%}
+      {% render 'theme-editor-notification' %}
+    {%- endif -%}
+
+    {%- if settings.use_custom_js -%}
+      <script type="lazyload_js" data-src="{{ 'custom.js' | asset_url }}"></script>
+    {%- endif -%}
+
+    <div class="background-overlay">
+      {% if settings.show_effect_close %}
+        <div class="background-cursor-wrapper">
+          <div class="background-cursor-wrapper_outer">
+            <div class="background-cursor-wrapper_inner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20">
+                <g class="nc-icon-wrapper" fill="#ffffff" transform="translate(0.5, 0.5)"><line fill="none" stroke-width="6" x1="46" y1="2" x2="2" y2="46"/> <line fill="none" stroke-width="6" x1="46" y1="46" x2="2" y2="2"/></g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    {% render 'halo-sidebar' %}
+    {{
+      shop.metafields.loox.global_html_body
+      | replace: '<script async src="', '<script type="lazyload_js" data-src="'
+    }}
+    {% render 'footer_file' %}
+
+    <span
+      class="clerk"
+      data-template="@live-search"
+      data-instant-search-suggestions="6"
+      data-instant-search-categories="6"
+      data-instant-search-pages="6"
+      data-instant-search=".Search-In-Modal"
+      data-instant-search-positioning="left"
+    >
+    </span>
+  </body>
+</html>

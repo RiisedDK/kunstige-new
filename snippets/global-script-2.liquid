@@ -1,0 +1,6 @@
+<script type="lazyload_js" data-src="{{ 'slider.js' | asset_url }}"></script>
+<script type="lazyload_js" data-src="{{ 'theme.js' | asset_url }}"></script>
+
+{%- if settings.show_calculator_free_shipping_message -%}
+    <script type="lazyload_js" data-src="{{ 'free-shipping-message.js' | asset_url }}"></script>
+{% endif %}
