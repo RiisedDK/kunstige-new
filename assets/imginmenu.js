@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
             img.src = "https://cdn.shopify.com/s/files/1/0727/8172/6042/files/Harlequin_01ed9274-4921-4149-a7af-f20265f6bc57.png?v=1712905913"; // Add your image source here
             img.classList.add('menuIconLux');
             link.insertBefore(img, link.firstChild);
-        } else if (navText === "Shape LED Bloklys") {
+        } else if (navText === "Solid Stripe LED Bloklys") {
             var img = document.createElement('img');
             img.src = "https://cdn.shopify.com/s/files/1/0727/8172/6042/files/Shape.png?v=1712904935"; // Add your image source here
             img.classList.add('menuIconLux');

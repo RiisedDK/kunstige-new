@@ -184,4 +184,18 @@ html:not(.appco_start) .item-wrapper span.pattern {
     background-image: none !important;
     display: none !important;
 }
+
+button#product-add-to-cart.is-loading::before {
+    border: none !important;
+    animation: none !important;
+    content: 'Added ✔️' !important;
+    color: white !important;
+    font-size: 19px;
+    width: auto;
+    height: auto;
+}
+
+button#product-add-to-cart.is-loading:hover::before{
+    color:green !important;
+}
 </style>

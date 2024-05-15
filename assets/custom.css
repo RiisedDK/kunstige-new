@@ -9,7 +9,27 @@
 // Please use only CSS to style the layout.
 //
 // =============================================================================*/
+@media only screen and (max-width: 768px) {
+  #clerk_powerstep .powerstep_continue,
+  #clerk_powerstep .powerstep_close {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
 
+.clerk_powerstep_image{
+  margin: 0 0 10px 0;
+}
+
+.powerstep_close {
+  background: #dbdbdb;
+  color: #292929;
+}
+
+.powerstep_continue {
+  background: #DF8E3B;
+  color: white;
+}
 
 .menuIconLux {
   float:left;
